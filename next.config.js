@@ -3,6 +3,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["example-apis.vercel.app"],
+  },
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
@@ -16,3 +19,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// next.config.js
