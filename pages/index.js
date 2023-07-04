@@ -1,5 +1,3 @@
-// import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces/ArtPieces";
 import Spotlight from "../components/Spotlight/Spotlight";
 
 export default function SpotlightPage({ data }) {
@@ -20,7 +18,6 @@ export default function SpotlightPage({ data }) {
         image={data[randNumber].imageSource}
         artist={data[randNumber].artist}
       />
-      
     </div>
   );
 }
