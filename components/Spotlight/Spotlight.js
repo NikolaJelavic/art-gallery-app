@@ -14,8 +14,10 @@ export default function Spotlight({
 
   return (
     <>
-      <h1>{artist}</h1>
-      <Image src={image} alt={artist} width={300} height={200} />
+      <h1>Spotlight</h1>
+
+      <h2>{artist}</h2>
+      <Image src={image} alt={artist} width={350} height={400} />
       <FavoriteButton
         isFavorite={artPiece.isFavorite}
         onToggleFavorite={onToggleFavorite}

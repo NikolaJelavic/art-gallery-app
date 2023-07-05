@@ -14,6 +14,7 @@ export default function Slug({ data, onToggleFavorite, artPiecesInfo }) {
       artist={selectedArtPiece.artist}
       year={selectedArtPiece.year}
       genre={selectedArtPiece.genre}
+      colors={selectedArtPiece.colors}
       onToggleFavorite={onToggleFavorite}
       slug={slug}
       artPiecesInfo={artPiecesInfo}

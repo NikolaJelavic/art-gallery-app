@@ -1,6 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import styled from "styled-components";
+
+const ColorContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+`;
+const ColorPalette = styled.div`
+  width: 100px;
+  height: 40px;
+  background-color: ${(props) => props.color};
+  margin: 5px;
+`;
 
 export default function ArtPieceDetails({
   image,
@@ -8,13 +21,19 @@ export default function ArtPieceDetails({
   artist,
   year,
   genre,
+  colors,
   isFavorite,
   onToggleFavorite,
   slug,
 }) {
   return (
     <div>
-      <Image src={image} alt="image name" width={300} height={200} />
+      <Image src={image} alt="image name" width={550} height={450} />
+      <ColorContainer>
+        {colors.map((color, index) => (
+          <ColorPalette key={index} color={color} />
+        ))}
+      </ColorContainer>
       <FavoriteButton
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}

@@ -8,6 +8,8 @@ export default function ArtPiecesPage({
 }) {
   return (
     <div className="art-pieces-list">
+      <h1>Art Pieces</h1>
+
       <ArtPieces
         pieces={data}
         onToggleFavorite={onToggleFavorite}
