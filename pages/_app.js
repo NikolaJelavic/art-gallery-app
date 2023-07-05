@@ -11,33 +11,12 @@ export default function App({ Component, pageProps }) {
 
   const updatedData = data?.map((item) => ({ ...item, isFavorite: false }));
 
-  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
-    "art-piece-info",
-    { defaultValue: updatedData }
-  );
-
-  function handleToggleFavorite(slug) {
-    setArtPiecesInfo(
-      artPiecesInfo.map((pieceInfo) =>
-        pieceInfo.slug === slug
-          ? { ...pieceInfo, isFavorite: !pieceInfo.isFavorite }
-          : pieceInfo
-      )
-    );
-  }
-
-  if (!artPiecesInfo) return;
   if (isLoading) return <div>loading...</div>;
 
   return (
     <>
       <GlobalStyle />
-      <Component
-        {...pageProps}
-        artPiecesInfo={artPiecesInfo ? artPiecesInfo : []}
-        onToggleFavorite={handleToggleFavorite}
-        data={updatedData}
-      />
+      <Component {...pageProps} data={updatedData} />
       <Layout />
     </>
   );

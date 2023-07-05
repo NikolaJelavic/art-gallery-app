@@ -1,30 +1,26 @@
 import Spotlight from "../components/Spotlight/Spotlight";
 
-export default function SpotlightPage({
-  data,
-  onToggleFavorite,
-  isFavorite,
-  slug,
-}) {
+export default function SpotlightPage({ data }) {
   let randNumber = null;
   if (!data) {
     return;
   }
 
   function random() {
-    return (randNumber = Math.floor(Math.random() * data.length));
+    const randNumber = Math.floor(Math.random() * (data.length - 1));
+    return data[randNumber];
   }
+  const artPiece = random();
 
-  random();
+  console.log(artPiece);
 
   return (
     <div>
       <Spotlight
-        image={data[randNumber].imageSource}
-        artist={data[randNumber].artist}
-        onToggleFavorite={onToggleFavorite}
-        isFavorite={isFavorite}
-        slug={slug}
+        image={artPiece.imageSource}
+        artist={artPiece.artist}
+        slug={artPiece.slug}
+        artPiece={artPiece}
       />
     </div>
   );
