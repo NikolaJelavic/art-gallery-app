@@ -1,10 +1,9 @@
-import useSWR from "swr";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 
 export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
   return (
     <ul>
-      {pieces.map((piece) => {
+      {pieces?.map((piece) => {
         return (
           <ArtPiecePreview
             onToggleFavorite={onToggleFavorite}
@@ -13,6 +12,8 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
             image={piece.imageSource}
             title={piece.name}
             artist={piece.artist}
+            isFavorite={piece.isFavorite}
+            artPiecesInfo={artPiecesInfo}
           />
         );
       })}
