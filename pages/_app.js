@@ -11,12 +11,22 @@ export default function App({ Component, pageProps }) {
 
   const updatedData = data?.map((item) => ({ ...item, isFavorite: false }));
 
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
+    "art-piece-info",
+    { defaultValue: [] }
+  );
+
   if (isLoading) return <div>loading...</div>;
 
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} data={updatedData} />
+      <Component
+        {...pageProps}
+        data={updatedData}
+        artPiecesInfo={artPiecesInfo}
+        setArtPiecesInfo={setArtPiecesInfo}
+      />
       <Layout />
     </>
   );

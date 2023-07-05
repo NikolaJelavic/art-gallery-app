@@ -12,7 +12,7 @@ export default function SpotlightPage({ data }) {
   }
   const artPiece = random();
 
-  console.log(artPiece);
+  // console.log(artPiece);
 
   return (
     <div>

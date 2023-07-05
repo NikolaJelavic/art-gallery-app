@@ -1,16 +1,13 @@
 import React from "react";
 import useLocalStorageState from "use-local-storage-state";
 
-export default function FavoriteButton({ onToggleFavorite, slug }) {
-  //   console.log("isFav:", isFavorite);
-
+export default function FavoriteButton({ slug }) {
   const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
     "art-piece-info",
     { defaultValue: [] }
   );
 
   function handleToggleFavorite(slug) {
-    // console.log(slug);
     setArtPiecesInfo(
       artPiecesInfo.map((pieceInfo) =>
         pieceInfo.slug === slug
@@ -24,8 +21,6 @@ export default function FavoriteButton({ onToggleFavorite, slug }) {
   });
 
   const isFavorite = artPiece.isFavorite;
-  console.log(artPiece);
-  console.log(artPiecesInfo);
 
   return (
     <button
