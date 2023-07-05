@@ -7,10 +7,6 @@ export default function Slug({ data, onToggleFavorite, artPiecesInfo }) {
 
   const selectedArtPiece = data.find((piece) => piece.slug === slug);
 
-  const { isFavorite } = artPiecesInfo?.find(
-    (item) => item.slug === selectedArtPiece.slug
-  );
-
   return (
     <ArtPieceDetails
       image={selectedArtPiece.imageSource}
@@ -20,7 +16,6 @@ export default function Slug({ data, onToggleFavorite, artPiecesInfo }) {
       genre={selectedArtPiece.genre}
       onToggleFavorite={onToggleFavorite}
       slug={slug}
-      isFavorite={isFavorite}
     />
   );
 }
