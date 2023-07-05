@@ -14,6 +14,7 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
             artist={piece.artist}
             isFavorite={piece.isFavorite}
             artPiecesInfo={artPiecesInfo}
+            colors={piece.colors}
           />
         );
       })}
