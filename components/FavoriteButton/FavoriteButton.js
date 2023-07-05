@@ -2,6 +2,7 @@ import React from "react";
 
 export default function FavoriteButton({ isFavorite, onToggleFavorite, slug }) {
   //   console.log("isFav:", isFavorite);
+
   return (
     <button
       onClick={() => onToggleFavorite(slug)}
