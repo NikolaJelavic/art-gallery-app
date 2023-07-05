@@ -6,6 +6,7 @@ export default function Spotlight({
   artist,
   isFavorite,
   onToggleFavorite,
+  slug,
 }) {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Spotlight({
       <FavoriteButton
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
+        slug={slug}
       ></FavoriteButton>
     </>
   );

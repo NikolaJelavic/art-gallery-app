@@ -10,6 +10,7 @@ export default function ArtPieceDetails({
   genre,
   isFavorite,
   onToggleFavorite,
+  slug,
 }) {
   return (
     <div>
@@ -17,6 +18,7 @@ export default function ArtPieceDetails({
       <FavoriteButton
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
+        slug={slug}
       />
       <h1>{title}</h1>
       <h2>
