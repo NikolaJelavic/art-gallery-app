@@ -1,5 +1,15 @@
 import React from "react";
 import ArtPieces from "../components/ArtPieces/ArtPieces";
+import styled from "styled-components";
+
+const List = styled.ul`
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  border-radius: 5px;
+`;
 
 export default function favorites({ data, setArtPiecesInfo, artPiecesInfo }) {
   const favoriteArt = artPiecesInfo
@@ -13,7 +23,7 @@ export default function favorites({ data, setArtPiecesInfo, artPiecesInfo }) {
   return (
     <>
       <h1>Favorite Art Pieces</h1>
-      <ul>
+      <List>
         {favoritePieces.map((piece) => (
           <ArtPieces
             key={piece.slug}
@@ -22,7 +32,7 @@ export default function favorites({ data, setArtPiecesInfo, artPiecesInfo }) {
             artPiecesInfo={artPiecesInfo}
           />
         ))}
-      </ul>
+      </List>
     </>
   );
 }

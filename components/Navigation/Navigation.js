@@ -8,9 +8,8 @@ const NavBar = styled.ul`
   bottom: 0px;
   justify-content: space-around;
   width: 100%;
-  max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
+  /* max-width: 600px; */
+  background-color: #c1e2be;
   text-transform: uppercase;
   border-top: 0.5px solid white;
   z-index: 99;
