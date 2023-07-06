@@ -6,13 +6,27 @@ import styled from "styled-components";
 const ColorContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  /* padding-bottom: 40px; */
 `;
 const ColorPalette = styled.div`
-  width: 100px;
-  height: 40px;
+  width: 80px;
+  height: 30px;
   background-color: ${(props) => props.color};
   margin: 5px;
+`;
+
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Genre = styled.h2`
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-align: center;
 `;
 
 export default function ArtPieceDetails({
@@ -27,8 +41,8 @@ export default function ArtPieceDetails({
   slug,
 }) {
   return (
-    <div>
-      <Image src={image} alt="image name" width={550} height={450} />
+    <Wrapper>
+      <Image src={image} alt="image name" width={450} height={400} />
       <ColorContainer>
         {colors.map((color, index) => (
           <ColorPalette key={index} color={color} />
@@ -39,14 +53,13 @@ export default function ArtPieceDetails({
         onToggleFavorite={onToggleFavorite}
         slug={slug}
       />
-      <h1>{title}</h1>
-      <h2>
-        {artist} - {year}
-      </h2>
-      <h3>{genre}</h3>
+      <h1>
+        {title} by {artist} - {year}
+      </h1>
+      <Genre>{genre}</Genre>
       <button>
         <Link href={`/art-pieces`}>Go Back</Link>
       </button>
-    </div>
+    </Wrapper>
   );
 }
